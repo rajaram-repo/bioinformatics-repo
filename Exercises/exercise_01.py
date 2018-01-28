@@ -17,6 +17,7 @@ def hello():
     Prints "Hello World"
     :return: None
     """
+print('1.Program1->Hello World')
 hello()
 def percent_decimal(i):
     if i>1:
@@ -35,8 +36,9 @@ def percent_decimal(i):
     :return: a float between 0 and 100
     """
     return i
+print('2.Program2->percent/decimal Conversion')
 result_i=percent_decimal(104)
-print(result_i)
+print('For input 104 the o/p is:',result_i)
 def exponent(integer, power):
     temp=integer;
     for x in range(power-1):
@@ -48,24 +50,29 @@ def exponent(integer, power):
     :return: an integer
     """
     return integer
+print('3.Program3->Exponent Function')
 result_exponent=exponent(5,4)
-print(result_exponent)
+print('For input 5,4 the o/p is:',result_exponent)
 def complement(dna):
-    str=''
+    str = ''
     for char in dna:
         if char == 'C':
-            str=str+'G'
+            str = str + 'G'
         elif char == 'G':
             str = str + 'C'
         elif char == 'A':
             str = str + 'T'
         elif char == 'T':
             str = str + 'A'
+        else :
+            str = 'invalid character entered, please check the input'
+            break
     """
     Returns the complement strand of DNA to the input.  C <--> G,  A <--> T
     :param dna: String containing only C, T, A, and G
     :return: String containing only C, T, A, and G
     """
     return str
+print('4.Program4->Complement Function')
 result_complemet=complement('ACTG')
-print(result_complemet)
+print('For input ACTG the o/p is :',result_complemet)
