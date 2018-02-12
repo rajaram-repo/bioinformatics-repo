@@ -14,15 +14,10 @@ def fast_complement(dna):
     :return: a string containing only the characters C, T, A, and G
     """
     str = ''
+    dict = {'C':'G','G':'C','A':'T','T':'A'}
     for char in dna:
-        if char == 'C':
-            str = str + 'G'
-        elif char == 'G':
-            str = str + 'C'
-        elif char == 'A':
-            str = str + 'T'
-        elif char == 'T':
-            str = str + 'A'
+        if char == 'C' or char == 'G' or char == 'T' or char == 'A':
+            str = str + dict[char]
         else :
             str = 'invalid character entered, please check the input'
             break
@@ -254,16 +249,11 @@ def reverse_complement(dna):
     :return: a string containing only the characters C, T, A, and G
     """
     str = ''
+    dict = {'C': 'G', 'G': 'C', 'A': 'T', 'T': 'A'}
     for char in dna:
-        if char == 'C':
-            str = str + 'G'
-        elif char == 'G':
-            str = str + 'C'
-        elif char == 'A':
-            str = str + 'T'
-        elif char == 'T':
-            str = str + 'A'
-        else:
+        if char == 'C' or char == 'G' or char == 'T' or char == 'A':
+            str = str + dict[char]
+        else :
             str = 'invalid character entered, please check the input'
             break
     return str[::-1]
@@ -277,16 +267,11 @@ def transcribe(dna):
     :return: a string containing only the characters C, U, A, and G
     """
     str = ''
+    dict = {'C': 'C', 'G': 'G', 'A': 'A', 'T': 'U'}
     for char in dna:
-        if char == 'C':
-            str = str + 'C'
-        elif char == 'G':
-            str = str + 'G'
-        elif char == 'A':
-            str = str + 'A'
-        elif char == 'T':
-            str = str + 'U'
-        else:
+        if char == 'C' or char == 'G' or char == 'T' or char == 'A':
+            str = str + dict[char]
+        else :
             str = 'invalid character entered, please check the input'
             break
     return str
