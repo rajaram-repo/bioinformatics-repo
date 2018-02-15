@@ -108,7 +108,7 @@ def head(file_name):
     #printing the 1st 10 lines
     print('list of first 10 lines',list[:10])
 
-head('test.fasta')
+head('test.txt')
 def tail(file_name):
     """
     Prints the LAST 10 lines of a file
@@ -119,7 +119,7 @@ def tail(file_name):
         list = infile.readlines()
     #calculating the last 10 lines using len(list)-10:len(list)
     print('list of last 10 lines',list[len(list)-10:len(list)])
-tail('test.fasta')
+tail('test.txt')
 
 def print_even(file_name):
     """
@@ -137,7 +137,7 @@ def print_even(file_name):
                 print(x)
             #increamenting
             i+=1
-print_even('test.fasta')
+print_even('test.txt')
 def csv_list(file_name):
     """
     Read in a CSV file to a 2D array (In python it is a list of lists)
