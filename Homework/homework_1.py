@@ -37,10 +37,10 @@ def remove_interval(s, start, stop):
     """
     #s[:start] will get the string from start of string to 'start'->value stored in start
     #s[stop:] will get the string from 'stop'->value stored in the stop to end of the string
-    temp_list = s[:start] + s[stop:]
+    temp_list = s[:start] + s[stop+1:]
     return temp_list
-result_remove_interval = remove_interval('Rajaram',2,5)
-print('result for remove_interval(Rajaram,2,5): ',result_remove_interval)
+result_remove_interval = remove_interval('Rajaram',2,4)
+print('result for remove_interval(Rajaram,2,4): ',result_remove_interval)
 
 def kmer_list(s, k):
     """
