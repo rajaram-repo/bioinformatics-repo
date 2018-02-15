@@ -67,8 +67,7 @@ def complement(dna):
         else :
             str = 'invalid character entered, please check the input'
             break
-    """
-    Returns the complement strand of DNA to the input.  C <--> G,  A <--> T
+    """    Returns the complement strand of DNA to the input.  C <--> G,  A <--> T
     :param dna: String containing only C, T, A, and G
     :return: String containing only C, T, A, and G
     """
