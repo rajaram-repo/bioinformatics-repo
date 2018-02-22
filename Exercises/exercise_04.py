@@ -28,8 +28,8 @@ def rc(dna):
 
     # x = [i for i in my_numbers if i > 0]
 
-    x  = [comp_dict[i] for i in dna]
-    return(''.join(x[::-1]))
+    x  = (''.join([comp_dict[i] for i in dna][::-1]))
+    return x
 
 print(rc("CCCTTTCCCAAA"))
 
@@ -50,7 +50,6 @@ def percent_decimal(numbers):
     #         new_numbers.append(num * 100)
 
     x = [num/100 if num > 1 else num*100 for num in numbers]
-
 
     return x
 
@@ -94,8 +93,7 @@ def multiple_proteins_from_rna(rna):
     # for i in range(0, len(rna), 3): # Loop over numbers, not characters and increment by 3 every loop
     #     protein += C2AA[rna[i:i+3]]  # rna[i:i+3] is the 3 letter codon that will be translated with the C2AA dictionary
 
-    protein = [C2AA[rna[i:i+3]] for i in range(0, len(rna), 3)]
-    protein = (''.join(protein))
+    protein = (''.join([C2AA[rna[i:i+3]] for i in range(0, len(rna), 3)]))
 
     #Now we extract every [M -> end] slice of our protein
 
@@ -104,9 +102,6 @@ def multiple_proteins_from_rna(rna):
     #         protein_list.append(protein[index:])  # append the found protein from M to the end of the string
 
     protein_list = [protein[index:] for index, char in enumerate(protein) if char == "M"]
-
-
-
     return protein_list
 
-print(multiple_proteins_from_rna("UCCAUGUUUAUGAGGAAGGUGA"))
+print(multiple_proteins_from_rna("UCCAUGUUUAUGAGGAGGUGA"))
