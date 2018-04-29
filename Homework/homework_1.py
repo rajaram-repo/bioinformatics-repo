@@ -4,7 +4,6 @@ DO NOT RENAME THIS FILE OR ANY DEFINITIONS!
 Place this file in your github repo inside of a folder titled "Homework".
 """
 
-
 # String Functions
 import os
 def fast_complement(dna):
@@ -232,7 +231,7 @@ def fasta_dict(file_name):
             try:
                 x = seq.split('\n', 1)
                 #Entering values into the dictionary using dict[key]=value
-                dict[x[0]] =  x[1].replace('\n', '')
+                dict[x[0]] = x[1].replace('\n', '')
             except:
                 pass
     return dict
@@ -260,7 +259,7 @@ def fastq_to_fasta(file_name, new_name=None):
             f.write(text)
             f.close()
     return
-fastq_to_fasta('proper_fastq.fastq','blah')
+fastq_to_fasta('proper_fastq.fastq')
 # Transcription and Translation
 def reverse_complement(dna):
     """

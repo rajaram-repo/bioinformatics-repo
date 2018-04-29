@@ -102,6 +102,7 @@ def multiple_proteins_from_rna(rna):
     #         protein_list.append(protein[index:])  # append the found protein from M to the end of the string
 
     protein_list = [protein[index:] for index, char in enumerate(protein) if char == "M"]
+    # print([char for index,char in enumerate(protein)])
     return protein_list
 
 print(multiple_proteins_from_rna("UCCAUGUUUAUGAGGAGGUGA"))

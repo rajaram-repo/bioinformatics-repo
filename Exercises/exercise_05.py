@@ -124,16 +124,9 @@ def main():
         previous_word = word
 
     print_all_nodes()
-    # new_beatles()
+    new_beatles()
     return
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
 

@@ -32,6 +32,7 @@ def kinase2(string):
     :param string: the protein sequence to be searched
     :return: a list of strings
     """
+
     return re.findall("[ST][A-Z]{2}[DE]", string)
 
 print(kinase2(test_protein))
