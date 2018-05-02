@@ -30,11 +30,16 @@ def forest_predictor(filepath,column,**kwargs):
     if(filepath and column and kwargs.get('test')):
         with open(filepath,'r') as infile:
             data = [line.replace('\n', '').split(',') for line in infile]
+            # print(data)
             if header_exists:
                 x = data[1:]
+                # print(x)
             x = [line[:kwargs.get(column,-1)] for line in x]
+            # print(x)
             y = data[1:]
+            # print(y)
             y = [line[-1] for line in y]
+            # print(y)
             x_test = kwargs.get('test')
             clf = RandomForestClassifier(n_estimators=500)
             clf = clf.fit(x, y)
@@ -45,12 +50,12 @@ def forest_predictor(filepath,column,**kwargs):
 if __name__ == '__main__':
     #This example uses the training and testing data from lecture_11, a 'large_dataset.csv' is also available, but not required
     x = [[15,0], [18,60000], [80,30000]]
-    clf = forest_predictor('../test_files/simple_data.csv', 2, header=True, save='../saves/random_forest.p', test=x)
+    clf = forest_predictor('../test_files/simple_data.csv', 2, header=True, save='../test_files/random_forest.p', test=x)
     # should print ['0', '1', '1'] and return the classifier so that feature_importances_ can be printed
-    if (os.path.isfile("../saves/random_forest.p")):
-        with open('../test_files/saved_variable.p', 'rb') as infile:
+    print(clf.feature_importances_)
+    if (os.path.isfile("../test_files/random_forest.p")):
+        with open('../test_files/random_forest.p', 'rb') as infile:
             clf = pickle.load(infile)
     else:
-        with open('../test_files/saved_variable.p', 'wb') as outfile:
+        with open('../test_files/random_forest.p', 'wb') as outfile:
             pickle.dump(x, outfile)
-    print(clf.feature_importances_)
