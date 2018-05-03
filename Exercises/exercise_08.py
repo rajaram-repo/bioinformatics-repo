@@ -51,7 +51,7 @@ if __name__ == '__main__':
         args = parser.parse_args()
         print(args)
         sum = 0
-        mul = 1
+        mul = args.multiply
         if (args.sum == True):
             for i in args.remainder:
                 sum = sum + int(i)
@@ -60,9 +60,6 @@ if __name__ == '__main__':
             for i in args.remainder:
                 mul = mul * int(i)
                 print("The Multiplied value is : ",mul)
-
-
-
     except:
         parser.print_help()
         sys.exit(1)
